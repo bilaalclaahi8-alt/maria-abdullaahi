@@ -1,0 +1,305 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Somali Women in Marine & Environmental Science</title>
+  <meta name="description" content="Empowering Somali Women in Marine & Environmental Science" />
+  <style>
+    :root{
+      --blue: #1E90FF;
+      --white: #FFFFFF;
+      --green: #32CD32;
+      --dark: #0b3550;
+      --muted: #6b7b8c;
+      --max-width: 1100px;
+      --radius: 12px;
+      font-family: Inter, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+    }
+
+    *{box-sizing:border-box}
+    html,body{height:100%;margin:0}
+    body{color:var(--dark);background:linear-gradient(180deg, #f7fbff 0%, #ffffff 100%);-webkit-font-smoothing:antialiased}
+
+    /* Layout */
+    .container{max-width:var(--max-width);margin:0 auto;padding:20px}
+
+    /* Header / Nav */
+    header{background:transparent;padding:18px 0;position:sticky;top:0;z-index:50}
+    .nav{display:flex;align-items:center;justify-content:space-between}
+    .brand{display:flex;align-items:center;gap:12px}
+    .logo{width:44px;height:44px;border-radius:10px;background:linear-gradient(135deg,var(--blue),#63b3ff);display:flex;align-items:center;justify-content:center;color:var(--white);font-weight:700}
+    .site-title{font-weight:700;color:var(--dark)}
+
+    nav ul{list-style:none;margin:0;padding:0;display:flex;gap:14px;align-items:center}
+    nav a{text-decoration:none;color:var(--dark);padding:8px 12px;border-radius:8px;font-weight:600}
+    nav a.cta{background:var(--blue);color:var(--white)}
+
+    /* Mobile menu (checkbox hack) */
+    .menu-toggle{display:none}
+    .hamburger{display:none;cursor:pointer;padding:8px;border-radius:8px}
+
+    /* Hero */
+    .hero{background:linear-gradient(180deg, rgba(30,144,255,0.12), rgba(50,205,50,0.02)), url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 300"><defs><linearGradient id="g" x1="0" x2="1"><stop offset="0" stop-color="%231E90FF" stop-opacity="0.35"/><stop offset="1" stop-color="%2332CD32" stop-opacity="0.08"/></linearGradient></defs><path d="M0,160 C150,220 350,120 600,150 C850,180 1050,80 1200,140 L1200,300 L0,300 Z" fill="url(%23g)"/></svg>') no-repeat right bottom/contain;padding:48px 0;border-radius:16px;margin-bottom:28px}
+    .hero-inner{display:flex;gap:28px;align-items:center}
+    .hero-content{flex:1}
+    .hero h1{margin:0;font-size:28px;color:var(--dark)}
+    .tagline{margin-top:8px;font-size:18px;color:var(--muted)}
+    .hero p{color:var(--muted);margin-top:14px;line-height:1.6;max-width:720px}
+    .hero-actions{margin-top:18px;display:flex;gap:12px}
+    .btn{padding:10px 16px;border-radius:10px;border:0;font-weight:700;cursor:pointer}
+    .btn.primary{background:var(--blue);color:var(--white)}
+    .btn.ghost{background:transparent;border:2px solid rgba(30,144,255,0.12);color:var(--dark)}
+
+    /* Cards / sections */
+    section{padding:26px 0}
+    .card-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+    .card{background:var(--white);border-radius:12px;padding:18px;box-shadow:0 6px 18px rgba(12,40,70,0.06)}
+    .card h3{margin:0 0 8px 0}
+    .muted{color:var(--muted)}
+
+    /* Team */
+    .team-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+    .member{display:flex;flex-direction:column;align-items:center;text-align:center;padding:14px}
+    .avatar{width:96px;height:96px;border-radius:12px;background:linear-gradient(135deg,var(--blue),#77c0ff);display:flex;align-items:center;justify-content:center;color:var(--white);font-weight:700;margin-bottom:10px}
+
+    /* Programs / Blog */
+    .placeholder{min-height:120px;display:flex;align-items:center;justify-content:center;color:var(--muted)}
+    .blog-list{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+
+    /* Donate & Contact */
+    .donate-box{display:flex;gap:20px;align-items:center;justify-content:space-between}
+    .donate-cta{flex:1;padding:18px;border-radius:12px;background:linear-gradient(90deg, rgba(30,144,255,0.06), rgba(50,205,50,0.03))}
+    form.field-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+    .field{display:flex;flex-direction:column;gap:6px}
+    input[type="text"], input[type="email"], textarea{padding:10px;border-radius:8px;border:1px solid #d8e6f5}
+    textarea{min-height:120px;resize:vertical}
+
+    footer{border-top:1px solid #e6f0fb;margin-top:32px;padding-top:20px;color:var(--muted)}
+    .footer-inner{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
+
+    /* Responsive */
+    @media (max-width: 900px){
+      .card-grid{grid-template-columns:repeat(2,1fr)}
+      .team-grid{grid-template-columns:repeat(2,1fr)}
+      .blog-list{grid-template-columns:repeat(2,1fr)}
+      .hero-inner{flex-direction:column;align-items:flex-start}
+      .avatar{width:76px;height:76px}
+      nav ul{display:none}
+      .hamburger{display:block}
+      .menu-toggle:checked + nav ul{display:flex;flex-direction:column;position:absolute;left:20px;top:68px;background:var(--white);padding:12px;border-radius:10px;box-shadow:0 8px 30px rgba(12,40,70,0.08)}
+    }
+
+    @media (max-width: 560px){
+      .card-grid{grid-template-columns:1fr}
+      .team-grid{grid-template-columns:1fr}
+      .blog-list{grid-template-columns:1fr}
+      .hero h1{font-size:22px}
+      .site-title{font-size:16px}
+      .donate-box{flex-direction:column}
+      form.field-grid{grid-template-columns:1fr}
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div class="nav">
+        <div class="brand">
+          <div class="logo">SW</div>
+          <div>
+            <div class="site-title">Somali Women in Marine & Environmental Science</div>
+            <div class="muted" style="font-size:12px">Empowering Somali women — ocean & environment</div>
+          </div>
+        </div>
+
+        <input id="menu-toggle" class="menu-toggle" type="checkbox" />
+        <label for="menu-toggle" class="hamburger">☰</label>
+
+        <nav>
+          <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About Us</a></li>
+            <li><a href="#programs">Programs</a></li>
+            <li><a href="#blog">Blog</a></li>
+            <li><a href="#donate" class="cta">Donate</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <!-- HERO -->
+      <section id="home" class="hero">
+        <div class="container hero-inner">
+          <div class="hero-content">
+            <h1>Empowering Somali Women in Marine &amp; Environmental Science</h1>
+            <div class="tagline">Building skills, sharing knowledge, and supporting coastal communities.</div>
+            <p>We are a Somali-led initiative dedicated to increasing participation of women in marine science and environmental stewardship. Join our programs, follow our research, or support our work so we can protect coastal ecosystems and empower the next generation of Somali scientists.</p>
+            <div class="hero-actions">
+              <a href="#contact" class="btn primary">Join Us</a>
+              <a href="#donate" class="btn">Donate</a>
+              <a href="#programs" class="btn ghost">Learn More</a>
+            </div>
+          </div>
+
+          <div style="width:360px;max-width:40%;min-width:220px">
+            <div class="card" aria-hidden="true">
+              <h3>Quick Stats</h3>
+              <p class="muted">Volunteers: <strong>24</strong><br/>Programs run: <strong>8</strong><br/>Communities reached: <strong>12</strong></p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ABOUT -->
+      <section id="about">
+        <div class="container">
+          <h2>About Us</h2>
+          <p class="muted">(Short mission paragraph can be added later) — Our mission is to support, train and connect Somali women working in marine and environmental science disciplines. We run training programs, community outreach and applied research that benefits coastal communities.</p>
+
+          <div style="margin-top:18px">
+            <h3>Team</h3>
+            <div class="team-grid" style="margin-top:12px">
+              <div class="member card">
+                <div class="avatar">HT</div>
+                <strong>Hiba Tooxow</strong>
+                <div class="muted">Program Lead</div>
+              </div>
+              <div class="member card">
+                <div class="avatar">RA</div>
+                <strong>Ruweyda Abdirahman</strong>
+                <div class="muted">Research & Outreach</div>
+              </div>
+              <div class="member card">
+                <div class="avatar">RM</div>
+                <strong>Rahma Mustafa</strong>
+                <div class="muted">Community Engagement</div>
+              </div>
+              <div class="member card">
+                <div class="avatar">MA</div>
+                <strong>Maria Abdullahi</strong>
+                <div class="muted">Admin & Partnerships</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- PROGRAMS -->
+      <section id="programs">
+        <div class="container">
+          <h2>Programs & Activities</h2>
+          <p class="muted">Text and details about programs can be added later. For now we provide placeholders for three main program areas.</p>
+
+          <div class="card-grid" style="margin-top:14px">
+            <div class="card">
+              <h3>Training & Workshops</h3>
+              <p class="muted">Capacity building for women in marine science methods, coastal monitoring and data collection.</p>
+            </div>
+            <div class="card">
+              <h3>Community Outreach</h3>
+              <p class="muted">Awareness campaigns, coastal cleanups and sustainable livelihood support for coastal families.</p>
+            </div>
+            <div class="card">
+              <h3>Research & Monitoring</h3>
+              <p class="muted">Applied research projects focused on fisheries, mangroves and plastic pollution.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- BLOG -->
+      <section id="blog">
+        <div class="container">
+          <h2>Blog & News</h2>
+          <p class="muted">Updates about our activities, events and success stories. Add posts later — these are sample cards.</p>
+
+          <div class="blog-list" style="margin-top:12px">
+            <article class="card">
+              <h3>Coastal cleanup in Bosaso</h3>
+              <p class="muted">Our volunteers collected 450kg of plastic waste and trained local youth on recycling methods.</p>
+            </article>
+            <article class="card">
+              <h3>Women in field monitoring</h3>
+              <p class="muted">A short report on a recent field monitoring training for water quality and plankton sampling.</p>
+            </article>
+            <article class="card">
+              <h3>Community mangrove planting</h3>
+              <p class="muted">Partners and community members planted 200 mangrove seedlings with project beneficiaries.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- DONATE -->
+      <section id="donate">
+        <div class="container">
+          <h2>Donate & Support</h2>
+          <div class="donate-box" style="margin-top:12px">
+            <div class="donate-cta">
+              <h3>Help us empower Somali women</h3>
+              <p class="muted">Your support funds training, equipment, and community programs. Choose a local transfer option or give online.</p>
+              <p style="margin-top:8px"><strong>Local transfer:</strong> Bank: Example Bank — Account: 123456789 — SWIFT: EXSOM</p>
+            </div>
+
+            <div style="width:320px;min-width:260px" class="card">
+              <h3>One-time donation</h3>
+              <form>
+                <div class="field"><label>Amount (USD)</label><input type="text" placeholder="e.g. 25" /></div>
+                <div class="field"><label>Your name</label><input type="text" placeholder="Full name" /></div>
+                <div style="margin-top:10px"><button type="button" class="btn primary">Donate</button></div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- CONTACT -->
+      <section id="contact">
+        <div class="container">
+          <h2>Contact Us</h2>
+          <p class="muted">Have questions or want to get involved? Send us a message.</p>
+
+          <div style="margin-top:12px;display:flex;gap:18px;align-items:flex-start;flex-wrap:wrap">
+            <div style="flex:1;min-width:280px" class="card">
+              <h3>Get in touch</h3>
+              <form>
+                <div class="field-grid">
+                  <div class="field"><label>Name</label><input type="text" /></div>
+                  <div class="field"><label>Email</label><input type="email" /></div>
+                </div>
+                <div style="margin-top:10px" class="field"><label>Message</label><textarea></textarea></div>
+                <div style="margin-top:10px"><button type="button" class="btn primary">Send Message</button></div>
+              </form>
+            </div>
+
+            <div style="width:320px;min-width:260px" class="card">
+              <h3>Contact Info</h3>
+              <p class="muted">Email: info@somaliwomenmarine.org<br/>Phone: +252 6XX XXX XXX<br/>Social: <a href="#">@somaliwomenmarine</a></p>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <div class="container footer-inner">
+        <div>
+          <strong>Somali Women in Marine &amp; Environmental Science</strong>
+          <div class="muted">Building coastal resilience and careers for Somali women.</div>
+        </div>
+        <div>
+          <div class="muted">Follow us:</div>
+          <div style="display:flex;gap:8px;margin-top:6px">
+            <a href="#">Twitter</a>
+            <a href="#">Facebook</a>
+            <a href="#">Instagram</a>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </div>
+</body>
+</html>
